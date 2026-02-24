@@ -1,0 +1,124 @@
+/* =========================
+   ECOSYSTEM SECTION
+========================= */
+
+.ecosystem {
+    padding: 100px 60px;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+.ecosystem-header {
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.ecosystem h2 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.ecosystem p {
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Grid */
+.eco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+/* Card */
+.eco-card {
+    padding: 32px 26px;
+    border-radius: 18px;
+    text-align: left;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.eco-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Icon */
+.eco-icon {
+    font-size: 32px;
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+/* Title */
+.eco-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Text */
+.eco-card p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* =========================
+   DARK THEME
+========================= */
+
+.dark .ecosystem {
+    background: #0c0f1a;
+    color: #ffffff;
+}
+
+.dark .eco-card {
+    background: linear-gradient(145deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.02));
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.dark .eco-card:hover {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+.light .ecosystem {
+    background: #f7f9fc;
+    color: #0b1220;
+}
+
+.light .eco-card {
+    background: #ffffff;
+    box-shadow: 0 12px 30px rgba(20, 30, 60, 0.08);
+}
+
+.light .eco-card:hover {
+    box-shadow: 0 20px 45px rgba(20, 30, 60, 0.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .ecosystem {
+        padding: 80px 24px;
+    }
+
+    .ecosystem h2 {
+        font-size: 32px;
+    }
+
+    .ecosystem p {
+        font-size: 15px;
+    }
+}
