@@ -1,0 +1,371 @@
+/* GLOBAL */
+
+:root {
+    --bg: #05051e;
+    --card: #11114b;
+    --text: #ffffff;
+    --muted: #cfcfff;
+    --accent: #ff8a00;
+}
+
+
+
+[data-theme="light"] {
+    --bg: #f2f5fb;
+    /* soft off-white background */
+    --card: #ffffff;
+    /* clean white cards */
+    --text: #0f172a;
+    /* deep navy text */
+    --muted: #475569;
+    /* muted slate text */
+    --accent: #ff8a00;
+    /* brand accent */
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    font-family: "Inter", system-ui, sans-serif;
+    /*  background: linear-gradient(135deg, #05051e, #0b0b3d); */
+
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.4s, color 0.4s;
+    /* color: #ffffff; */
+    overflow-x: hidden;
+}
+
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+.product-card,
+.investment-card,
+.loan-card {
+    background: var(--card);
+}
+
+/* ===== PAGE SPACING ===== */
+
+
+
+/* VALUES */
+
+/* ===== VALUES SECTION ===== */
+.values {
+  padding: 120px 24px;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.values-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== HEADER ===== */
+.values-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.values-header h2 {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.values-header p {
+  max-width: 640px;
+  margin: 20px auto 0;
+  font-size: 17px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ===== GRID ===== */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+/* ===== CARD ===== */
+.value-card {
+  padding: 42px 36px;
+  border-radius: 26px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+}
+
+.value-icon {
+  font-size: 34px;
+  margin-bottom: 22px;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.value-card p {
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+/* ===== FEATURED CARD ===== */
+.value-card.featured {
+  transform: scale(1.03);
+}
+
+.value-card.featured:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+/* ============================= */
+/* ===== DARK THEME ============ */
+/* ============================= */
+
+.dark .values {
+  background: radial-gradient(circle at top, #0b0b2b, #050517);
+  color: #ffffff;
+}
+
+.dark .values-header p {
+  color: #c9c9ff;
+}
+
+.dark .value-card {
+  background: linear-gradient(180deg, #12124a, #0b0b2f);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.dark .value-card.featured {
+  background: linear-gradient(135deg, #ff8a00, #ffb347);
+  color: #000;
+  box-shadow: 0 25px 60px rgba(255, 138, 0, 0.45);
+}
+
+/* ============================= */
+/* ===== LIGHT THEME =========== */
+/* ============================= */
+
+.light .values {
+  background: #f6f8ff;
+  color: #0b0b1f;
+}
+
+.light .values-header p {
+  color: #4b4b6b;
+}
+
+.light .value-card {
+  background: #ffffff;
+  box-shadow: 0 20px 45px rgba(10, 20, 80, 0.08);
+}
+
+.light .value-card.featured {
+  background: linear-gradient(135deg, #4f7cff, #8ea8ff);
+  color: #ffffff;
+  box-shadow: 0 25px 55px rgba(79, 124, 255, 0.35);
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 600px) {
+  .values {
+    padding: 90px 18px;
+  }
+
+  .value-card {
+    padding: 34px 26px;
+  }
+
+  .values-header {
+    margin-bottom: 60px;
+  }
+}
+
+
+
+
+
+
+/* CTA */
+.cta {
+    padding: 120px 60px;
+    text-align: center;
+    background: radial-gradient(circle at top, #ff8a0030, transparent);
+}
+
+.cta h2 {
+    font-size: 42px;
+}
+
+.cta p {
+    max-width: 600px;
+    margin: 20px auto 40px;
+    color: #dcdcff;
+}
+
+
+
+
+
+
+
+/* INVESTMENTS */
+.investments {
+    padding: 120px 60px;
+    text-align: center;
+}
+
+.investments-intro {
+    max-width: 700px;
+    margin: 20px auto 70px;
+    color: #cfcfff;
+}
+
+.investments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.investment-card {
+    background: #11114b;
+    padding: 40px;
+    border-radius: 28px;
+    text-align: left;
+}
+
+.investment-card.highlight {
+    background: linear-gradient(135deg, #ff8a00, #ffb347);
+    color: #000;
+}
+
+/* LOANS */
+.loans {
+    padding: 120px 60px;
+    text-align: center;
+}
+
+.loans-intro {
+    max-width: 650px;
+    margin: 20px auto 70px;
+    color: #cfcfff;
+}
+
+.loans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.loan-card {
+    background: #11114b;
+    padding: 40px;
+    border-radius: 28px;
+    text-align: left;
+}
+
+.loan-card.highlight {
+    background: linear-gradient(135deg, #ff8a00, #ffb347);
+    color: #000;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    .investments,
+    .loans {
+        padding: 90px 30px;
+    }
+}
+
+
+
+
+
+
+
+/* RESPONSIVE MENU */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        padding: 30px;
+        background: #0b0b3d;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .mobile-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+ 
+
+    .nav {
+        padding: 20px 30px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+ 
+}

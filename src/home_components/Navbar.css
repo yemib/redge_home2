@@ -1,0 +1,245 @@
+/* ================= NAVBAR BASE ================= */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    backdrop-filter: blur(16px);
+    transition: all 0.4s ease;
+}
+
+/* ================= DARK THEME ================= */
+.nav.dark {
+    background: linear-gradient(135deg, rgba(10, 10, 30, 0.96), rgba(25, 25, 60, 0.96));
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= LIGHT THEME ================= */
+.nav.light {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 255, 0.95));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= LOGO ================= */
+.nav-logo {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ff8a00, #ffcc80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= LINKS ================= */
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+/* Dark links */
+.nav.dark .nav-links a {
+    color: #e0e0ff;
+}
+
+/* Light links */
+.nav.light .nav-links a {
+    color: #333;
+}
+
+/* Hover + Active */
+.nav-links a:hover {
+    transform: translateY(-1px);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff8a00, #ffd194);
+    transform: translateX(-50%);
+    transition: width 0.35s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: #ffb347;
+    font-weight: 600;
+}
+
+/* ================= ACTIONS ================= */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* ================= THEME TOGGLE ================= */
+.theme-toggle {
+    border: none;
+    padding: 9px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.35s ease;
+}
+
+.nav.dark .theme-toggle {
+    /* background: rgba(255, 138, 0, 0.2); */
+    color: #ffcc80;
+}
+
+.nav.light .theme-toggle {
+   /*  background: rgba(0, 0, 0, 0.08); */
+    color: #333;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* ================= HAMBURGER ================= */
+.menu-toggle {
+    display: none;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background: currentColor;
+    transition: all 0.35s ease;
+}
+
+.nav.dark .menu-toggle {
+    color: #fff;
+}
+
+.nav.light .menu-toggle {
+    color: #333;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 0;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu {
+    position: fixed;
+    top: 90px;
+    right: 22px;
+    width: 260px;
+    border-radius: 20px;
+    padding: 16px 0;
+    animation: dropIn 0.35s ease;
+}
+
+.mobile-menu.dark {
+    background: rgba(20, 20, 50, 0.97);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+}
+
+.mobile-menu.light {
+    background: #ffffff;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 14px 28px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.dark a {
+    color: #eee;
+}
+
+.mobile-menu.light a {
+    color: #333;
+}
+
+.mobile-menu a:hover {
+    background: rgba(255, 138, 0, 0.15);
+    padding-left: 36px;
+}
+
+.mobile-menu a.active {
+    background: linear-gradient(90deg, #ff8a00, #ffd194);
+    color: #000;
+    font-weight: 700;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
